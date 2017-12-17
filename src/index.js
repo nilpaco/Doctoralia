@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 import App from './components/App.jsx';
+import styles from './styles.css';
 
 ReactDOM.render((
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <HashRouter>
+      <App className='${styles}' />
+    </HashRouter>
     ), document.getElementById('root'));

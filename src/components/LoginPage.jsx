@@ -1,8 +1,12 @@
 import React from 'react';
 
+import { authService } from '../services/auth.service';
+
 export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
+
+        authService.logout();
 
         this.state = {
             username: '',
@@ -20,8 +24,8 @@ export default class LoginPage extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
         localStorage.setItem('user', JSON.stringify(this.state));
+        this.props.history.push('/');
     }
 
     render() {
